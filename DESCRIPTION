@@ -4,6 +4,7 @@ Title: Digital Signal Trading
 Version: 1.0
 Date: 2014-03-29
 Author: Ilya Kipnis
+<<<<<<< HEAD
 Contributors: Kent Hoxsey, Brian Peterson
 Maintainer: Ilya Kipnis <ilya.kipnis@gmail.com>
 Depends:
@@ -28,3 +29,13 @@ Collate:
     'utility.R'
     'CGO.R'
     'cyberCycle.R'
+=======
+Maintainer: Ilya Kipnis <ilya.kipnis@gmail.com>
+Depends: xts (>= 0.9-3), Rcpp, inline, TTR, quantmod, stats
+LinkingTo: xts, Rcpp, inline, TTR, quantmod, stats
+Description: DSP signal procssing technical trading rules.
+License: GPL-2
+Collate: 'AdaptiveMAs.R' 'KAMA.R' 'LRSI.R' 'PMA.R' 'RVI.R' 'fisherTransform.R' 'iTrend.R' 'nlLaguerre.R'
+            'utility.R' 'CGO.R' 'cyberCycle.R'
+Packaged: 2014-04-03 18:40:09.867142 UTC; ikipnis
+>>>>>>> 78685d480b63f57462ba53eae783f514742ede16

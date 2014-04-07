@@ -10,8 +10,9 @@
 #'@param sumType -- either of "arithmetic" or "wilder" type arguments for the type of sum.
 #'@return the quotient of the sum of the last n coefficients multiplied by price divided by the sum of the coefficients.
 #'@note TODO: implement more possible coefficient methods.
+#'@export
 
-EhlersFilter <- function(HLC, n=15, nCoefLookback=10, priceMethod="Close", 
+"EhlersFilter" <- function(HLC, n=15, nCoefLookback=10, priceMethod="Close", 
                          coefMethod=c("Distance","AbsVal","Ichimoku"), 
                          sumType=c("arithmetic","wilder")) {
   price <- ehlersPriceMethod(HLC, method=priceMethod)

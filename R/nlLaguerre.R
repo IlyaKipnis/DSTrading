@@ -1,11 +1,11 @@
-#Nonlinear Laguerre
-#http://www.mesasoftware.com/Seminars/TradeStation%20World%2005.pdf
-#CONVERT TO RCPP IN THE FUTURE.
 #'Nonlinear Laguerre Trend Indicator
 #'@param HLC -- an xts object containing High, Low, and Close price data
 #'@param n -- the period for computation
 #'@param priceMethod -- use "Close" for the close, any other string will result in Ehlers's (H+L)/2 method.
 #'@return an xts object
+#'@references
+#'\cr \url{http://www.mesasoftware.com/Seminars/TradeStation\%20World\%2005.pdf}\cr
+#'@note TODO--implement loop in a faster language.
 #'@export
 "nlLaguerre" <- function(HLC, n=20, priceMethod="Close") {
   price <- as.numeric(ehlersPriceMethod(HLC, method=priceMethod))

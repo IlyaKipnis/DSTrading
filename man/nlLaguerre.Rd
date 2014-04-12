@@ -19,4 +19,11 @@
 \description{
   Nonlinear Laguerre Trend Indicator
 }
+\note{
+  TODO--implement loop in a faster language.
+}
+\references{
+  \cr
+  \url{http://www.mesasoftware.com/Seminars/TradeStation\%20World\%2005.pdf}\cr
+}
 

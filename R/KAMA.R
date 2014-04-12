@@ -16,6 +16,8 @@ cppFunction('
 #'@param nSlow -- the slow limit of the adaptive EMA
 #'@param priceMethod -- use "Close" for the close, any other string will result in Ehlers's (H+L)/2 method.
 #'@return an xts object
+#'@references
+#'\cr \url{http://www.mesasoftware.com/Seminars/TradeStation\%20World\%2005.pdf}\cr
 #'@export
 "KAMA" <- function(HLC, nER=10, nFast=2, nSlow=30, priceMethod="Close") {
   price <- ehlersPriceMethod(HLC, method=priceMethod)

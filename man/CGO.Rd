@@ -28,4 +28,8 @@
 \description{
   Center of Gravity Oscillator
 }
+\references{
+  \cr
+  \url{http://www.mesasoftware.com/Papers/The\%20CG\%20Oscillator.pdf}\cr
+}
 

@@ -25,4 +25,8 @@
 \description{
   Kaufman Adaptive Moving Average
 }
+\references{
+  \cr
+  \url{http://www.mesasoftware.com/Seminars/TradeStation\%20World\%2005.pdf}\cr
+}
 

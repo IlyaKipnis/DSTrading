@@ -1,5 +1,3 @@
-#Center of Gravity --scales on default
-#http://www.mesasoftware.com/Papers/The%20CG%20Oscillator.pdf
 #'Center of Gravity Oscillator
 #'@param HLC -- an xts object containing High, Low, and Close price data
 #'@param n -- the period for computation
@@ -8,6 +6,8 @@
 #'@param nSD -- an argument for scaling. Sets the number of days over which to compute a running volatility.
 #'In effect, a larger nSD value will assign more extreme values to the scaled oscillator.
 #'@return an xts object
+#'@references
+#'\cr \url{http://www.mesasoftware.com/Papers/The\%20CG\%20Oscillator.pdf}\cr
 #'@export
 "CGO" <- function(HLC, n=10, priceMethod="Close", scale=TRUE, nSD=100) {
   price <- ehlersPriceMethod(HLC, method=priceMethod)

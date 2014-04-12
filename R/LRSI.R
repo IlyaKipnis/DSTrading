@@ -1,11 +1,10 @@
-#Laguerre RSI
-#Time Warp Without Space Travel
-#http://www.mesasoftware.com/Papers/TIME%20WARP.pdf
 #'Laguerre RSI
 #'@param HLC -- an xts object containing High, Low, and Close price data
 #'@param gamma -- a dampening factor
 #'@param priceMethod -- use "Close" for the close, any other string will result in Ehlers's (H+L)/2 method.
 #'@return an xts object
+#'@references
+#'\cr \url{http://www.mesasoftware.com/Papers/TIME\%20WARP.pdf}\cr
 #'@export
 "LRSI" <- function(HLC, gamma=.5, priceMethod="Close") {
   price <- ehlersPriceMethod(HLC, method=priceMethod)
@@ -39,6 +38,8 @@
 #'@param gamma -- a dampening factor
 #'@param priceMethod -- use "Close" for the close, any other string will result in Ehlers's (H+L)/2 method.
 #'@return an xts object
+#'@references
+#'\cr \url{http://www.mesasoftware.com/Papers/TIME\%20WARP.pdf}\cr
 #'@export
 "GLRSI" <- function(HLC, n=4, gamma=.5, priceMethod="Close") {
   price <- ehlersPriceMethod(HLC, method=priceMethod)

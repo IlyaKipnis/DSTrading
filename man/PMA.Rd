@@ -19,4 +19,7 @@
 \description{
   Ehlers Predictive Moving Averages
 }
+\references{
+  -- Rocket Science For Traders, Chapter 20
+}
 

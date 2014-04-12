@@ -1,12 +1,11 @@
-
-#cyber cycle
-#http://www.mesasoftware.com/Papers/THE%20INVERSE%20FISHER%20TRANSFORM.pdf
 #'Ehlers Cyber Cycle
 #'@param HLC -- an xts object containing High, Low, and Close price data
 #'@param alpha -- a tuning parameter
 #'@param priceMethod -- use "Close" for the close, any other string will result in Ehlers's (H+L)/2 method.
 #'@param iFish -- defaults to TRUE. Whether or not to apply the inverse fisher transform. See ?iFish
 #'@return an xts object
+#'@references
+#'\cr \url{http://www.mesasoftware.com/Papers/THE\%20INVERSE\%20FISHER\%20TRANSFORM.pdf}\cr
 #'@export
 "cyberCycle" <- function(HLC, alpha=.07, priceMethod="Close", iFish=TRUE) {
   price <- ehlersPriceMethod(HLC, method=priceMethod)

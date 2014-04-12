@@ -19,4 +19,8 @@
 \description{
   Laguerre RSI
 }
+\references{
+  \cr
+  \url{http://www.mesasoftware.com/Papers/TIME\%20WARP.pdf}\cr
+}
 

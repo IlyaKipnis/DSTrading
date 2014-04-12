@@ -13,4 +13,8 @@
 \description{
   Fisher Transform
 }
+\references{
+  \cr
+  \url{http://www.mesasoftware.com/Papers/THE\%20INVERSE\%20FISHER\%20TRANSFORM.pdf}\cr
+}
 

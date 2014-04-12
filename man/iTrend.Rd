@@ -21,4 +21,8 @@
 \description{
   Ehlers Instantaneous Trendline Indicator
 }
+\references{
+  \cr
+  \url{http://www.mesasoftware.com/Seminars/AfTA\%20May\%2003.pdf}\cr
+}
 

@@ -41,4 +41,8 @@
 \note{
   TODO: implement more possible coefficient methods.
 }
+\references{
+  \cr
+  \url{http://www.mesasoftware.com/Papers/Ehlers\%20Filters.pdf}\cr
+}
 

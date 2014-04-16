@@ -4,16 +4,6 @@ require(inline)
 ########### SCRATCHWORK FILE. NOTHING TO SEE HERE. NOTHING IN HERE WILL BE EXPORTED. 
 ########### EVER.
 
-#Fractal Adaptive Moving Average (FRAMA)
-FRAMA <- function(HLC, n) {}
-
-#Variable Index Dynamic Average
-#VIDA
-#http://www.mesasoftware.com/Seminars/TradeStation%20World%2005.pdf
-
-
-
-
 ################ Transforms ####################
 
 #The filter function cannot deal with NAs for some godforsaken reason. Stupid function.

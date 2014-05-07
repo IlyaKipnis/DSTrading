@@ -1,3 +1,5 @@
+useDynLib(DSTrading)
+importFrom(Rcpp, evalCpp)
 export(CGO)
 export(EhlersFilter)
 export(FRAMA)

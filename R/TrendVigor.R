@@ -40,6 +40,7 @@
     vigor[vigor > 2] <- 2
     vigor[vigor < -2] <- -2
     out <- cbind(vigor, signal, lead)
+    colnames(out) <- c("vigor", "signal", "lead")
     return(out)
   } else {
     stop("Dynamic period computation not implemented yet.")

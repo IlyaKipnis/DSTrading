@@ -40,7 +40,7 @@
     vigor[vigor > 2] <- 2
     vigor[vigor < -2] <- -2
     out <- cbind(vigor, signal, lead)
-    return(vigor)
+    return(out)
   } else {
     stop("Dynamic period computation not implemented yet.")
     #TODO -- DYNAMIC PERIOD TREND VIGOR

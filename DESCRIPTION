@@ -12,14 +12,16 @@ Depends:
     inline,
     TTR,
     quantmod,
-    stats
+    stats,
+    quantstrat
 Imports:
     Rcpp (>= 0.11.1),
     xts,
     TTR,
     quantmod,
     stats,
-    inline
+    inline,
+    quantstrat
 LinkingTo: xts, Rcpp, inline, TTR, quantmod, stats
 Description: DSP signal procssing technical trading rules.
 License: GPL-2

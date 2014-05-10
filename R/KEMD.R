@@ -1,12 +1,12 @@
 #Cycle Amplitude Calculation
 #http://www.mesasoftware.com/Seminars/Trend%20Modes%20and%20Cycle%20Modes.pdf
 #'Kipnis Empirical Mode Decomposition
-#'@param x -- a time series
-#'@param delta -- bandpass parameter (see reference paper), default .1
-#'@param n -- a lookback period, default 20
-#'@param bandFraction -- trending vs. mean-reverting band control. Raise to bias towards mean reversion.
+#'@param x a time series
+#'@param delta bandpass parameter (see reference paper), default .1
+#'@param n a lookback period, default 20
+#'@param bandFraction trending vs. mean-reverting band control. Raise to bias towards mean reversion.
 #'Lower to bias towards trend-following. Defaults to .1
-#'@param maType -- type of moving average to use. Defaults to SMA.
+#'@param maType type of moving average to use. Defaults to SMA.
 #'@return an xts consisting of a trend, a peak band, a valley band, a pctB, and momentum.
 #'The market is classified as trending upwards when the trend is above the peak band,
 #'trending downwards when below the valley, and rangebound in between.
@@ -16,7 +16,7 @@
 #'by an running n-point standard deviation of the bandpass. This helps make the bands more adaptive
 #'and less likely to give whipsaw signals compared to Ehlers's Empirical Mode Decomposition. PctB and momentum are added features as well.
 #'@references
-#'\cr \url{http://www.mesasoftware.com/Seminars/Trend\%20Modes\%20and\%20Cycle\%20Modes.pdf}\cr
+#'\url{http://www.mesasoftware.com/Seminars/Trend\%20Modes\%20and\%20Cycle\%20Modes.pdf}
 #'@export
 "KEMD" <- function(x, delta=.1, n=20, bandFraction=.1, maType="SMA", ...) {
   maType <- match.fun(maType)
@@ -34,8 +34,9 @@
   peak[peakIndex] <- bandpass[peakIndex]; valley[valleyIndex] <- bandpass[valleyIndex]
   peak <- xts(peak, order.by=index(x)); valley <- xts(valley, order.by=index(x))
   peak <- na.locf(peak); valley <- na.locf(valley)
-  meanPeak <- bandFraction*maType(peak, n=floor(2.5*n))/bandpassSD
-  meanValley <- bandFraction*maType(valley, n=floor(2.5*n))/bandpassSD
+  period <- min(n+30, 2.5*n)
+  meanPeak <- bandFraction*maType(peak, n=floor(period))/bandpassSD
+  meanValley <- bandFraction*maType(valley, n=floor(period))/bandpassSD
   pctB <- (trend-meanValley)/(meanPeak-meanValley)
   momentum <- trend-lag(trend, n)
   out <- cbind(trend, meanPeak, meanValley, pctB, momentum)

@@ -2,26 +2,18 @@
 #Theoretically, values between 1 and -1 are prime conditions for oscillator type strategies.
 #Thus, values above an absolute value of 1 should be grounds for trying to trend follow.
 #It seems that the most critical parameter in this demo is the period parameter in the indicator.
+#From empirical observation, I have found that a period of 60 to 120 days gets the best results.
+#At a 200 day period, there aren't enough trades, and the analytics fall out due to lack of trades.
+
+#Only run these lines once to load the data/environment, and the rest of the boilerplate that blotter needs.
 
 require(DSTrading)
 require(quantstrat)
+source("demoData.R") #contains all of the data-related boilerplate.
 
-rm(list=ls(.blotter), envir=.blotter)
-initDate='1990-12-31'
-#initEq=10000
-
-currency('USD')
-Sys.setenv(TZ="UTC")
-
-symbols <- c("SPY")
-
-stock(symbols, currency="USD", multiplier=1)
-getSymbols(symbols, src='yahoo', 
-           index.class=c("POSIXt","POSIXct"),
-           from = "1993-01-01", to="2013-12-31", adjust=TRUE)
+## To rerun the strategy, re-run everything from this line down.
 
 strategy.st <- portfolio.st <- account.st <- "TVItrendFollowingLong"
-
 rm.strat(portfolio.st)
 rm.strat(strategy.st)
 initPortf(portfolio.st, symbols=symbols, initDate=initDate, currency='USD')
@@ -31,7 +23,7 @@ strategy(strategy.st, store=TRUE)
 
 ######### indicator
 
-add.indicator(strategy.st, name="TVI", arguments=list(x=quote(Cl(mktdata)), period=60, delta=0.2), label="TVI")
+add.indicator(strategy.st, name="TVI", arguments=list(x=quote(Cl(mktdata)), period=200, delta=0.2), label="TVI")
 
 ########## signals
 
@@ -44,7 +36,7 @@ add.signal(strategy.st, name="sigThreshold",
            label="longExit")
 
 add.signal(strategy.st, name="sigThreshold",
-           arguments=list(threshold=0.9, column="vigor.TVI", relationship="lt", cross=TRUE),
+           arguments=list(threshold=1, column="vigor.TVI", relationship="lt", cross=TRUE),
            label="wrongExit")
 
 ########## rules
@@ -68,5 +60,4 @@ updateAcct(portfolio.st,dateRange)
 updateEndEq(account.st)
 
 (tStats <- tradeStats(Portfolios = portfolio.st, use="trades", inclZeroDays=TRUE))
-chart.Posn(portfolio.st)
-zoom_Chart("1993-06-01::")
+(dStats <- dailyStats(Portfolios = portfolio.st, use="Equity"))

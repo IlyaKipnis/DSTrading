@@ -6,19 +6,19 @@
     maType = "SMA", ...)
 }
 \arguments{
-  \item{x}{-- a time series}
+  \item{x}{a time series}
 
-  \item{delta}{-- bandpass parameter (see reference paper),
+  \item{delta}{bandpass parameter (see reference paper),
   default .1}
 
-  \item{n}{-- a lookback period, default 20}
+  \item{n}{a lookback period, default 20}
 
-  \item{bandFraction}{-- trending vs. mean-reverting band
+  \item{bandFraction}{trending vs. mean-reverting band
   control. Raise to bias towards mean reversion. Lower to
   bias towards trend-following. Defaults to .1}
 
-  \item{maType}{-- type of moving average to use. Defaults
-  to SMA.}
+  \item{maType}{type of moving average to use. Defaults to
+  SMA.}
 }
 \value{
   an xts consisting of a trend, a peak band, a valley band,
@@ -42,7 +42,6 @@
   well.
 }
 \references{
-  \cr
-  \url{http://www.mesasoftware.com/Seminars/Trend\%20Modes\%20and\%20Cycle\%20Modes.pdf}\cr
+  \url{http://www.mesasoftware.com/Seminars/Trend\%20Modes\%20and\%20Cycle\%20Modes.pdf}
 }
 

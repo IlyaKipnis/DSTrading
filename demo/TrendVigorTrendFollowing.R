@@ -61,3 +61,5 @@ updateEndEq(account.st)
 
 (tStats <- tradeStats(Portfolios = portfolio.st, use="trades", inclZeroDays=TRUE))
 (dStats <- dailyStats(Portfolios = portfolio.st, use="Equity"))
+
+chart.Posn(portfolio.st, "SPY")

@@ -23,7 +23,7 @@ strategy(strategy.st, store=TRUE)
 
 ######### indicator
 
-add.indicator(strategy.st, name="TVI", arguments=list(x=quote(Cl(mktdata)), period=200, delta=0.2), label="TVI")
+add.indicator(strategy.st, name="TVI", arguments=list(x=quote(Cl(mktdata)), period=100, delta=0.2), label="TVI")
 
 ########## signals
 

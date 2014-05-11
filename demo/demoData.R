@@ -1,3 +1,5 @@
+options("getSymbols.warning4.0"=FALSE)
+options(width=200)
 rm(list=ls(.blotter), envir=.blotter)
 initDate='1990-12-31'
 
@@ -56,7 +58,7 @@ symbols <- c("SPY", #SPDR S&P 500
 
 #SPDR ETFs first, iShares ETFs afterwards
 if(!"SPY" %in% ls()) { 
-  getSymbols(symbols, from="2003-01-01", to="2010-12-31", src="yahoo", adjust=TRUE)  
+  suppressMessages(getSymbols(symbols, from="2003-01-01", to="2010-12-31", src="yahoo", adjust=TRUE))  
 }
 
 stock(symbols, currency="USD", multiplier=1)

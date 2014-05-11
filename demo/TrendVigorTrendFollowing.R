@@ -48,7 +48,7 @@ add.rule(strategy.st, name="ruleSignal", arguments=list(sigcol="wrongExit", sigv
 ########## apply strategy
 
 t1 <- Sys.time()
-out <- applyStrategy(strategy=strategy.st,portfolios=portfolio.st)
+out <- applyStrategy(strategy=strategy.st,portfolios=portfolio.st, verbose=FALSE)
 t2 <- Sys.time()
 print(t2-t1)
 

@@ -2,7 +2,7 @@
 \alias{TVI}
 \title{Trend Vigor Indicator}
 \usage{
-  TVI(x, period = 20, delta = 0.2)
+  TVI(x, period = 20, delta = 0.2, triggerLag = 1)
 }
 \arguments{
   \item{x}{a univariate series}
@@ -13,13 +13,17 @@
 
   \item{delta}{a trigonometric parameter for computing
   bandpass filter.}
+
+  \item{triggerLag}{-- a delay by which to lag the vigor
+  computation.}
 }
 \value{
   vigor -- the trend vigor indicator. An absolute value
   higher than 1 indicates a trend. \cr \cr Signal and
   lead--a combination of indicators to form an oscillator.
   Buy when the signal crosses under the lead and vice
-  versa. Signal and lead are centered at zero.
+  versa. Signal and lead are centered at zero. Trigger is
+  the vigor computation lagged by the triggerLag indicator.
 }
 \description{
   John Ehlers's Trend Vigor Indicator, along with a signal

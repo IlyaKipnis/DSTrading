@@ -2,6 +2,9 @@ require(DSTrading)
 require(IKTrading)
 require(quantstrat)
 
+initDate="1990-01-01"
+from="2003-01-01"
+to="2010-12-31"
 
 #to rerun the strategy, rerun everything below this line
 source("demoData.R") #contains all of the data-related boilerplate.
@@ -76,6 +79,10 @@ updateEndEq(account.st)
 tStats <- tradeStats(Portfolios = portfolio.st, use="trades", inclZeroDays=FALSE)
 tStats[,4:ncol(tStats)] <- round(tStats[,4:ncol(tStats)], 2)
 print(data.frame(t(tStats[,-c(1,2)])))
+(aggPF <- sum(tStats$Gross.Profits)/-sum(tStats$Gross.Losses))
+(aggCorrect <- mean(tStats$Percent.Positive))
+(numTrades <- sum(tStats$Num.Trades))
+(meanAvgWLR <- mean(tStats$Avg.WinLoss.Ratio))
 
 summary(tStats$Gross.Profit)
 

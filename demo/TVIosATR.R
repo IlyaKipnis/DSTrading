@@ -2,6 +2,10 @@ require(DSTrading)
 require(IKTrading)
 require(quantstrat)
 
+initDate="1990-01-01"
+from="2003-01-01"
+to=as.character(Sys.Date())
+
 #to rerun the strategy, rerun everything below this line
 source("demoData.R") #contains all of the data-related boilerplate.
 
@@ -96,15 +100,21 @@ names(corMeans) <- gsub(".DailyEndEq", "", names(corMeans))
 print(round(corMeans,3))
 mean(corMeans)
 
+portfRets <- xts(rowMeans(instRets)*ncol(instRets), order.by=index(instRets))
+portfRets <- portfRets[!is.na(portfRets)]
 cumPortfRets <- cumprod(1+portfRets)
-firstNonZeroDay <- index(portfRets)[min(which(portfRets!=0))]
-getSymbols("SPY", from=firstNonZeroDay, to="2010-12-31")
+firstNonZeroDay <- as.character(index(portfRets)[min(which(portfRets!=0))])
+getSymbols("SPY", from=firstNonZeroDay, to=to)
 SPYrets <- diff(log(Cl(SPY)))[-1]
 cumSPYrets <- cumprod(1+SPYrets)
 comparison <- cbind(cumPortfRets, cumSPYrets)
 colnames(comparison)  <- c("strategy", "SPY")
 chart.TimeSeries(comparison, legend.loc = "topleft", 
                  main=paste0("Period=", period, ", Delta=",delta), colors=c("green","red"))
+
+SharpeRatio.annualized(portfRets)
+Return.annualized(portfRets)
+maxDrawdown(portfRets)
 
 #Sharpe, Returns, max DD
 SharpeRatio.annualized(portfRets)

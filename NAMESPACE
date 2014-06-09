@@ -1,3 +1,6 @@
+useDynLib(DSTrading)
+exportPattern("^[[:alpha:]]+")
+importFrom(Rcpp, evalCpp)
 export(CGO)
 export(EhlersFilter)
 export(FRAMA)

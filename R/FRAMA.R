@@ -33,6 +33,6 @@
   FRAMA <- xts(FRAMA, order.by=index(price))
   FRAMA[initializationIndex] <- alpha[initializationIndex] <- NA
   trigger <- lag(FRAMA, triggerLag)
-  out <- cbind(FRAMA=FRAMA, trigger=trigger, FRAMArank=FRAMArank, lagRank=lagRank)
+  out <- cbind(FRAMA=FRAMA, trigger=trigger)
   return(out)
 }

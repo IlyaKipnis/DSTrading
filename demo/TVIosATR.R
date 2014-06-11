@@ -3,8 +3,9 @@ require(IKTrading)
 require(quantstrat)
 
 initDate="1990-01-01"
-from="2003-01-01"
+from="2010-12-01"
 to=as.character(Sys.Date())
+options(width=70)
 
 #to rerun the strategy, rerun everything below this line
 source("demoData.R") #contains all of the data-related boilerplate.
@@ -122,12 +123,10 @@ Return.annualized(portfRets)
 maxDrawdown(portfRets)
 
 #Individual instrument equity curve
-chart.Posn(portfolio.st, "XLB")
-#The triggerLag is NOT 30 for the strategy, just amplified in this case to illustrate exit logic.
-#The actual trigger lag is defaulted at 1.
-tmp <- TVI(Cl(XLB), period=period, delta=delta, triggerLag=1)
+chart.Posn(portfolio.st, "EWJ")
+tmp <- TVI(Cl(EWJ), period=period, delta=delta, triggerLag=1)
 add_TA(tmp$vigor, lwd=3)
 add_TA(tmp$trigger, on=5, col="red", lwd=1.5)
-tmp2 <- lagATR(HLC=HLC(XLB), n=period)
+tmp2 <- lagATR(HLC=HLC(EWJ), n=period)
 add_TA(tmp2$atr, col="blue", lwd=2)
 

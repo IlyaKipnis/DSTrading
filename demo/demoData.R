@@ -1,6 +1,5 @@
 options("getSymbols.warning4.0"=FALSE)
 rm(list=ls(.blotter), envir=.blotter)
-initDate='1990-12-31'
 
 currency('USD')
 Sys.setenv(TZ="UTC")

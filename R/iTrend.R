@@ -1,7 +1,7 @@
 #'Ehlers Instantaneous Trendline Indicator
-#'@param HLC -- an xts object containing High, Low, and Close price data.
-#'@param alpha -- a dampening factor -- default .07
-#'@param priceMethod -- use "Close" for close prices or any other string for (H+L)/2
+#'@param HLC an xts object containing High, Low, and Close price data.
+#'@param alpha a dampening factor -- default .07
+#'@param priceMethod use "Close" for close prices or any other string for (H+L)/2
 #'@return iTrend, the instantaneous trendline indicator
 #'iTrigger -- the trigger line. Buy when this crosses above/sell when crossing under.
 #'@references

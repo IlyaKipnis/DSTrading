@@ -1,9 +1,9 @@
 #'Center of Gravity Oscillator
-#'@param HLC -- an xts object containing High, Low, and Close price data
-#'@param n -- the period for computation
-#'@param priceMethod -- use "Close" for the close, any other string will result in Ehlers's (H+L)/2 method.
-#'@param scale -- an option whether or not to scale the oscillator. Defaults to TRUE.
-#'@param nSD -- an argument for scaling. Sets the number of days over which to compute a running volatility.
+#'@param HLC an xts object containing High, Low, and Close price data
+#'@param n the period for computation
+#'@param priceMethod use "Close" for the close, any other string will result in Ehlers's (H+L)/2 method.
+#'@param scale an option whether or not to scale the oscillator. Defaults to TRUE.
+#'@param nSD an argument for scaling. Sets the number of days over which to compute a running volatility.
 #'In effect, a larger nSD value will assign more extreme values to the scaled oscillator.
 #'@return an xts object
 #'@references

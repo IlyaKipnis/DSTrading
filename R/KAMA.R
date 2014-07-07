@@ -1,10 +1,10 @@
 
 #'Kaufman Adaptive Moving Average
-#'@param HLC -- an xts object containing High, Low, and Close price data
-#'@param nER -- a parameter for the Kaufman efficiency ratio lookback period
-#'@param nFast -- the fast limit of the adaptive EMA
-#'@param nSlow -- the slow limit of the adaptive EMA
-#'@param priceMethod -- use "Close" for the close, any other string will result in Ehlers's (H+L)/2 method.
+#'@param HLC an xts object containing High, Low, and Close price data
+#'@param nER a parameter for the Kaufman efficiency ratio lookback period
+#'@param nFast the fast limit of the adaptive EMA
+#'@param nSlow the slow limit of the adaptive EMA
+#'@param priceMethod use "Close" for the close, any other string will result in Ehlers's (H+L)/2 method.
 #'@return an xts object
 #'@references
 #'\cr \url{http://www.mesasoftware.com/Seminars/TradeStation\%20World\%2005.pdf}\cr

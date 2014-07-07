@@ -4,7 +4,7 @@ require(quantstrat)
 
 initDate="1990-01-01"
 from="2010-12-01"
-to=as.character(Sys.Date())
+to="2014-06-09"
 options(width=70)
 
 #to rerun the strategy, rerun everything below this line

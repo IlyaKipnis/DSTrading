@@ -1,9 +1,9 @@
 #'Variable Index Dynamic Average
-#'@param x -- a price series
-#'@param n -- a short period number over which to take a running SD
-#'@param m -- a long period number over which to take a running SD
-#'@param smoothConstant -- a parameter that affects smoothing. k*p(t) + (1-k)*p(t-1)
-#'@return -- a stream of Variable Index Dynamic Average computations.
+#'@param x a price series
+#'@param n a short period number over which to take a running SD
+#'@param m a long period number over which to take a running SD
+#'@param smoothConstant a parameter that affects smoothing. k*p(t) + (1-k)*p(t-1)
+#'@return a stream of Variable Index Dynamic Average computations.
 #'@references 
 #'\cr \url{"http://www.mesasoftware.com/Seminars/TradeStation\%20World\%2005.pdf"} \cr
 #'@export

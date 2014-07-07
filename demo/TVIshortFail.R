@@ -22,7 +22,7 @@ initOrders(portfolio.st, initDate=initDate)
 strategy(strategy.st, store=TRUE)
 
 #parameters (trigger lag unchanged, defaulted at 1)
-delta=.2
+delta=0
 period=20
 pctATR=.02 #control risk with this parameter
 

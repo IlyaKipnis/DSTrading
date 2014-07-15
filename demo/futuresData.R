@@ -1,5 +1,7 @@
+require(Quandl)
 Quandl.auth("tMqBC2HG1qczGTFxsHyN")
 require(IKTrading)
+
 
 currency('USD')
 Sys.setenv(TZ="UTC")
@@ -24,8 +26,10 @@ if(!"CME_CL" %in% ls()) {
   CME_BO <- quandClean("CHRIS/CME_BO", start_date=from, end_date=to, verbose=verbose) #Chicago Soybean Oil
   
   #Softs
-  ICE_SB <- quandClean("CHRIS/ICE_SB", start_date=from, end_date=to, verbose=verbose) #Sugar
+  #ICE_SB <- quandClean("CHRIS/ICE_SB", start_date=from, end_date=to, verbose=verbose) #Sugar
+  #Sugar 2007-03-26 is wrong
   ICE_KC <- quandClean("CHRIS/ICE_KC", start_date=from, end_date=to, verbose=verbose) #Coffee
+  #Coffee January of 08 is FUBAR'd
   ICE_CC <- quandClean("CHRIS/ICE_CC", start_date=from, end_date=to, verbose=verbose) #Cocoa
   ICE_CT <- quandClean("CHRIS/ICE_CT", start_date=from, end_date=to, verbose=verbose) #Cotton
   
@@ -71,7 +75,8 @@ CMEinsts <- c("CL", "NG", "HO", "RB", "C", "S", "W", "SM", "KW", "BO", "LC", "LN
               "PA", "HG", "AD", "CD", "SF", "EC", "BP", "JY", "NE", "ES", "MD", "NQ", "TF", "NK", #"FF",
               "ED", "FV", "TY", "US")
 
-ICEinsts <- c("B", "G", "SB", "KC", "CC", "CT", "DX")
+ICEinsts <- c("B", "G", #"SB", "KC", 
+              "CC", "CT", "DX")
 CME <- paste("CME", CMEinsts, sep="_")
 ICE <- paste("ICE", ICEinsts, sep="_")
 symbols <- c(CME, ICE)

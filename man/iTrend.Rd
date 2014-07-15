@@ -5,12 +5,12 @@
   iTrend(HLC, alpha = 0.07, priceMethod = "Close")
 }
 \arguments{
-  \item{HLC}{-- an xts object containing High, Low, and
-  Close price data.}
+  \item{HLC}{an xts object containing High, Low, and Close
+  price data.}
 
-  \item{alpha}{-- a dampening factor -- default .07}
+  \item{alpha}{a dampening factor -- default .07}
 
-  \item{priceMethod}{-- use "Close" for close prices or any
+  \item{priceMethod}{use "Close" for close prices or any
   other string for (H+L)/2}
 }
 \value{

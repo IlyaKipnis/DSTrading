@@ -45,4 +45,6 @@ Collate:
     'TrendVigor.R'
     'SWI.R'
     'GFRAMA.R'
+    'ACP.R'
+    'CyclicOscillators.R'
 Packaged: 2014-04-03 18:40:09.867142 UTC; ikipnis

@@ -19,6 +19,7 @@ ACP <- function(x, AvgLength=0, ...) {
   }
   corList <- do.call(cbind, corList)
   corList <- xts(corList, order.by=index(filt))
+  return(corList)
   
 }
 

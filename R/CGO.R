@@ -21,6 +21,6 @@
     CGO <- CGO+mean(c(1,n))
     CGO <- CGO/runSD(CGO, n=nSD)
   }
-  
+  colnames(CGO)='CGO'
   return(CGO)  
 }

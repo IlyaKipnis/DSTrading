@@ -15,4 +15,6 @@
   consts <- rep(smoothConstant, length(x))
   out <- computeVIDA(k, x, filt, consts)
   out <- xts(out, order.by=index(x))
+  colnames(out) = 'VIDA'
+  return(out)
 }

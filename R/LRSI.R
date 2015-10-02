@@ -25,6 +25,7 @@
   CU <- rowSums(ups)
   CD <- rowSums(downs)*-1
   out <- xts(CU/(CU+CD)*100,order.by=index(price))
+  colnames(out)='LRSI'
   return(out) 
 }
 
@@ -57,5 +58,6 @@
   CU <- diff; CU[CU<0] <- 0; CU <- rowSums(CU);
   CD <- diff; CD[CD>0] <- 0; CD <- rowSums(CD)*-1;
   out <- xts(CU/(CU+CD)*100, order.by=index(price))
+  colnames(out) = 'GLRSI'
   return(out)
 }

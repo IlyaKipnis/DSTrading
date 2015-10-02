@@ -23,5 +23,6 @@
   KAMA[1:nER] <- price[1:nER]
   KAMA <- computeKAMA(alpha, alphaComplement, KAMA, price)
   KAMA <- xts(KAMA, order.by=index(price))
+  colnames(KAMA)='KAMA'
   return (KAMA)
 }

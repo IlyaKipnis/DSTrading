@@ -29,5 +29,6 @@
     filt[i] <- (L0[i]+2*L1[i]+2*L2[i]+L3[i])/6  
   }
   out <- xts(filt, order.by=index(HLC))
+  colnames(nlLaguerre) = 'nlLaguerre'
   return (out)
 }

@@ -21,5 +21,6 @@
     cycle <- iFish(cycle)
   }
   cycle <- xts(cycle, order.by=index(HLC))
+  colnames(cycle) = 'cyberCycle'
   return(cycle)
 }

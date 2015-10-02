@@ -18,6 +18,7 @@ highPassFilter <- function(x) {
   HP <- filter(HP, c(2*(1-alpha1), -1*(1-alpha1)*(1-alpha1)), method="recursive")
   HP <- c(NA, NA, HP)
   HP <- xts(HP, order.by=index(x))
+  colnames(HP) = 'highPassFilter'
   return(HP)
 }
 
@@ -33,4 +34,6 @@ superSmoother <- function(x) {
   filt <- filter(filt, c(c2, c3), method="recursive")
   filt <- c(rep(NA,leadNAs), filt)
   filt <- xts(filt, order.by=index(x))
+  colnames(filt) = 'superSmoother'
+  return(filt)
 }

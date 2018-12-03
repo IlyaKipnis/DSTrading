@@ -62,6 +62,7 @@ phaseAccumulator <- function(HLC, priceMethod="Close") {
     period[i] <- .25*instPeriod[i] + .75*period[i-1]
   }
   period <- xts(period, order.by=index(HLC))
+  colnames(period)='phaseAccumulator'
   return(period)
 }
 
@@ -112,6 +113,7 @@ homodyne <- function(HLC, priceMethod="Close") {
     smoothPeriod[i] <- period[i]/3 + smoothPeriod[i-1]*2/3
   }
   smoothPeriod <- xts(smoothPeriod, order.by=index(price))
+  colnames(smoothPeriod)='homodyne'
   return (smoothPeriod)
 }
 
@@ -173,6 +175,7 @@ ESNR <- function(HLC, priceMethod="Close") {
   Noise <- stats::filter(.1*(Hi(HLC)-Lo(HLC))^2*.25, .9, method="recursive")
   SNR[Signal != 0 & Noise !=0] <- stats::filter(.33*10*log(Signal[Signal > 0]/Noise[Signal > 0])/log(10),.67,method="recursive")
   SNR <- xts(SNR, order.by=index(HLC))
+  colnames(SNR)='ESNR'
   return(SNR)
 }
 

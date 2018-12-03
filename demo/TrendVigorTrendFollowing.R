@@ -9,6 +9,12 @@
 
 require(DSTrading)
 require(quantstrat)
+
+
+initDate="1990-01-01"
+from="2003-01-01"
+to="2010-12-31"
+
 source("demoData.R") #contains all of the data-related boilerplate.
 
 ## To rerun the strategy, re-run everything from this line down.

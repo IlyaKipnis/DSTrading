@@ -1,9 +1,9 @@
 #'Ehlers Predictive Moving Averages
-#'@param HLC -- an xts object containing High, Low, and Close price data
-#'@param n -- the period for computation
-#'@param priceMethod -- use "Close" for the close, any other string will result in Ehlers's (H+L)/2 method.
+#'@param HLC an xts object containing High, Low, and Close price data
+#'@param n the period for computation
+#'@param priceMethod use "Close" for the close, any other string will result in Ehlers's (H+L)/2 method.
 #'@return an xts object
-#'@references -- Rocket Science For Traders, Chapter 20
+#'@references Rocket Science For Traders, Chapter 20
 #'@export
 "PMA" <- function(HLC, n, priceMethod="Close") {
   price <- ehlersPriceMethod(HLC, method=priceMethod)

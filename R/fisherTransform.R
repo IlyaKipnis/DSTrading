@@ -1,6 +1,6 @@
 #'Fisher Transform
-#'@param x -- an xts or stream of numeric values
-#'@return -- an object the same type as above
+#'@param x an xts or stream of numeric values
+#'@return an object the same type as above
 #'@references
 #'\cr \url{http://www.mesasoftware.com/Papers/THE\%20INVERSE\%20FISHER\%20TRANSFORM.pdf}\cr
 #'@export
@@ -9,8 +9,8 @@
 }
 
 #'Inverse Fisher Transform
-#'@param x -- an xts or stream of numeric values
-#'@return -- an object the same type as above
+#'@param x an xts or stream of numeric values
+#'@return an object the same type as above
 #'@references
 #'\cr \url{http://www.mesasoftware.com/Papers/THE\%20INVERSE\%20FISHER\%20TRANSFORM.pdf}\cr
 #'@export

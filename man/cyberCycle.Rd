@@ -6,15 +6,15 @@
     iFish = TRUE)
 }
 \arguments{
-  \item{HLC}{-- an xts object containing High, Low, and
-  Close price data}
+  \item{HLC}{an xts object containing High, Low, and Close
+  price data}
 
-  \item{alpha}{-- a tuning parameter}
+  \item{alpha}{a tuning parameter}
 
-  \item{priceMethod}{-- use "Close" for the close, any
-  other string will result in Ehlers's (H+L)/2 method.}
+  \item{priceMethod}{use "Close" for the close, any other
+  string will result in Ehlers's (H+L)/2 method.}
 
-  \item{iFish}{-- defaults to TRUE. Whether or not to apply
+  \item{iFish}{defaults to TRUE. Whether or not to apply
   the inverse fisher transform. See ?iFish}
 }
 \value{

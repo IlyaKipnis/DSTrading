@@ -1,6 +1,6 @@
 #'Ehlers Relative Vigor Index
-#'@param OHLC -- an OHLC xts object
-#'@param n -- number of periods to use
+#'@param OHLC an OHLC xts object
+#'@param n number of periods to use
 #'@return an XTS object
 #'@references the following site was used to code this indicator:
 #'\cr \url{http://www.davenewberg.com/Trading/TS_Code/Ehlers_Indicators/Relative_Vigor_Index.html}\cr

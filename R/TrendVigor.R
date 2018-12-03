@@ -3,13 +3,14 @@
 #'@param x a univariate series
 #'@param period an integer number of days to look back. Not implemented yet: enter 0 for a dynamic period computation.
 #'@param delta a trigonometric parameter for computing bandpass filter.
+#'@param triggerLag -- a delay by which to lag the vigor computation.
 #'@return vigor -- the trend vigor indicator. An absolute value higher than 1 indicates a trend. \cr \cr
 #'Signal and lead--a combination of indicators to form an oscillator. Buy when the signal crosses under the lead and vice versa.
-#'Signal and lead are centered at zero.
+#'Signal and lead are centered at zero. Trigger is the vigor computation lagged by the triggerLag indicator.
 #'@note TODO: implement method for using a dynamic/adaptive period computation for greater accuracy.
 #'@references \url{http://www.mesasoftware.com/Seminars/Trend\%20Modes\%20and\%20Cycle\%20Modes.pdf}
 #'@export
-"TVI" <- function(x, period=20, delta=.2) {
+"TVI" <- function(x, period=20, delta=.2, triggerLag=1) {
   if(period!=0) { #static, length-1 period
     beta <- cos(2*pi/period)
     gamma <- 1/cos(4*pi*delta/period)
@@ -39,8 +40,10 @@
     vigor <- trend/PtoP
     vigor[vigor > 2] <- 2
     vigor[vigor < -2] <- -2
-    out <- cbind(vigor, signal, lead)
-    colnames(out) <- c("vigor", "signal", "lead")
+    vigor[is.na(vigor)] <- 0
+    trigger <- lag(vigor, triggerLag)
+    out <- cbind(vigor, signal, lead, trigger)
+    colnames(out) <- c("vigor", "signal", "lead", "trigger")
     return(out)
   } else {
     stop("Dynamic period computation not implemented yet.")

@@ -8,17 +8,17 @@
     sumType = c("arithmetic", "wilder"))
 }
 \arguments{
-  \item{HLC--an}{HLC type xts object}
+  \item{HLC}{an HLC type xts object}
 
-  \item{n--number}{of periods to look back}
+  \item{n}{number of periods to look back}
 
-  \item{nCoefLookback--number}{of periods over which to
+  \item{nCoefLookback}{number of periods over which to
   compute one coefficient}
 
-  \item{priceMethod--"Close"}{for closing price, otherwise
+  \item{priceMethod}{"Close" for closing price, otherwise
   uses Ehlers (H+L)/2}
 
-  \item{coefMethod--one}{of three possible methods to
+  \item{coefMethod}{one of three possible methods to
   compute a coefficient. Distance computes the sum of
   squares of differences of the last nCoefLookback prices
   and the current price. AbsVal computes the absolute
@@ -27,7 +27,7 @@
   of the highest high of the last nCoefLookback periods and
   the lowest low.}
 
-  \item{sumType}{-- either of "arithmetic" or "wilder" type
+  \item{sumType}{either of "arithmetic" or "wilder" type
   arguments for the type of sum.}
 }
 \value{

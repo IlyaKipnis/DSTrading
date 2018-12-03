@@ -1,13 +1,13 @@
 #'Ehlers Filters -- moving average type smoothers
-#'@param HLC--an HLC type xts object
-#'@param n--number of periods to look back
-#'@param nCoefLookback--number of periods over which to compute one coefficient
-#'@param priceMethod--"Close" for closing price, otherwise uses Ehlers (H+L)/2
-#'@param coefMethod--one of three possible methods to compute a coefficient.
+#'@param HLC an HLC type xts object
+#'@param n number of periods to look back
+#'@param nCoefLookback number of periods over which to compute one coefficient
+#'@param priceMethod "Close" for closing price, otherwise uses Ehlers (H+L)/2
+#'@param coefMethod one of three possible methods to compute a coefficient.
 #'Distance computes the sum of squares of differences of the last nCoefLookback prices and the current price.
 #'AbsVal computes the absolute difference between the current price and the price nCoefLookback periods ago.
 #'Ichimoku computes the average of the highest high of the last nCoefLookback periods and the lowest low.
-#'@param sumType -- either of "arithmetic" or "wilder" type arguments for the type of sum.
+#'@param sumType either of "arithmetic" or "wilder" type arguments for the type of sum.
 #'@return the quotient of the sum of the last n coefficients multiplied by price divided by the sum of the coefficients.
 #'@note TODO: implement more possible coefficient methods.
 #'@references

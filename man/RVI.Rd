@@ -5,9 +5,9 @@
   RVI(OHLC, n = 10)
 }
 \arguments{
-  \item{OHLC}{-- an OHLC xts object}
+  \item{OHLC}{an OHLC xts object}
 
-  \item{n}{-- number of periods to use}
+  \item{n}{number of periods to use}
 }
 \value{
   an XTS object
